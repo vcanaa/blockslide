@@ -15,21 +15,7 @@ block = { x: 20, y: 20, h: 20, w: 20, dx: 0, dy: 0};
 
 drawElements = [ block ];
 updateElements = [ block ];
-
-grid = createGrid (
-".........x
-..........
-..........
-.x........
-........x.
-..........
-.......x..
-..........
-..........
-x.........
-");
-
-
+collisionElements = [];
 
 document.addEventListener('keydown', function(event) {
     if(event.keyCode == LEFT) {
@@ -72,7 +58,39 @@ function drawCanvas() {
 function updateGame() {
     updateElements.forEach(function (e) {
        e.update(10);
-    })
+    });
+
+    for(var i = 0; i < collisionElements.length; i++) {
+        var a = collisionElements[i];
+        for(var j = i + 1; j < collisionElements.length; j++) {
+            var b = colli
+            if ()
+        }
+    }
+}
+
+grid = [
+[.,.,.,.,.,.,.,.,.,1],
+[.,.,.,.,.,.,.,.,.,.],
+[.,.,.,.,.,.,.,.,.,.],
+[.,1,.,.,.,.,.,.,.,.],
+[.,.,.,.,.,.,.,.,1,.],
+[.,.,.,.,.,.,.,.,.,.],
+[.,.,.,.,.,.,.,1,.,.],
+[.,.,.,.,.,.,.,.,.,.],
+[.,.,.,.,.,.,.,.,.,.],
+[1,.,.,.,.,.,.,.,.,.],
+];
+
+function createBlocks(grid) {
+    for(var i = 0; i < grid.length; i++) {
+        line = grid[i];
+        for(var j = 0; j < line.length; j++) {
+            if (line[j] == 1) {
+
+            }
+        }
+    }
 }
 
 setInterval(drawCanvas, 10);
